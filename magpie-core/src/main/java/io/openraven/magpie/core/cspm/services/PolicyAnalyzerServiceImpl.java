@@ -127,7 +127,7 @@ public class PolicyAnalyzerServiceImpl implements PolicyAnalyzerService {
       Violation violation = new Violation();
       violation.setPolicy(policy);
       violation.setRule(rule);
-      violation.setAssetId(result.get("assetid").toString()); // Assume Rules should always return this type of alias
+      violation.setAssetId(result.get("assetid")==null?"":result.get("assetid").toString()); // Assume Rules should always return this type of alias
       violation.setInfo(rule.getDescription());
       violation.setError(evalErr.toString());
       violation.setEvaluatedAt(evaluatedAt);
